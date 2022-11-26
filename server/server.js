@@ -21,6 +21,7 @@ app.get('/quotes', function(req, res) {
 // control + c closes the server
 // route, path, URL (can be used rather interchangably)
 // .get is an example of the verb. what we are doing. the method.
+// terminal: npm install       // can run this no matter what and make sure node/node_modules is installed on your project and 
 
 ///////////////////////////////////////////////////CRUD////////////////////////////////////////////////////
 
