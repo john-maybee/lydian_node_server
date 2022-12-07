@@ -3,25 +3,17 @@ const express = require('express');
 const app = express();
 const port = 5001;
 
-app.use(express.static('server/public')); // when you serve up a static, you have to ake sure it has a index.html inside
+app.use(express.static('server/public')); // when you serve up a static, you have to make sure it has a index.html inside
 app.use(express.urlencoded());
-const quoteList = require('./modules/quoteList');
+
+const quoteRouter = require('./routes/quotes_router');
+
+app.use('/quotes', quoteRouter); // this is like the traffic director telling us which direction to go.
 
 app.listen(port, () => {
     console.log('listening on port, ', port);
 });
 
-app.get('/quotes', function(req, res) {
-    console.log("request for /quotes was made");
-    res.send(quoteList);
-    // res.sendStatus(418);
-} );
-
-app.post('/quotes', function(req, res){
-    console.log('post request response', req.body);
-    quoteList.push(req.body);
-    res.sendStatus(404);  // 201 was the positive status response
-});
 
 // control + c closes the server
 // route, path, URL (can be used rather interchangably)

@@ -47,3 +47,5 @@ function appendToDom(array) {
         `)
     }
 }
+
+// int randomWithMathRandom = (int) ((Math.random() * (max - min)) + min);
